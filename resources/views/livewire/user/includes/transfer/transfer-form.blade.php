@@ -147,7 +147,7 @@
                                          
                                            {{-- show error section --}}
                                             @if (session("error"))
-                                                <span style="color: red" class="text-center text-[15px]">{{session("error")}}</span> 
+                                                <div class="text-center text-red-500 text-[15px] mt-4">{{session("error")}}</div>
                                              @endif
                                              
                                     </div>

@@ -1,5 +1,5 @@
            <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 sticky top-8">
-                <h3 class="font-bold text-bank-navy mb-6 text-base sm:text-lg">Profile Picture</h3>
+                <h3 class="font-bold text-bank-navy mb-6 text-base sm:text-lg">Profile Picture</h3> 
                 
                 <form wire:submit="updateProfilePhoto" class="flex flex-col items-center">
                     <!-- Profile Image Container -->

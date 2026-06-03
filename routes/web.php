@@ -12,6 +12,7 @@ use App\Livewire\Auth\AdminPreparingDashboard;
 use App\Http\Controllers\VerifyEmailController;
 use App\Livewire\Auth\EmailVerificationMessage;
 use App\Http\Controllers\pdf\TransactionReceiptController;
+use Illuminate\Support\Facades\Artisan;
 
 
 //this route group handles web page routes
@@ -48,6 +49,13 @@ Route::prefix("auth")->group(function(){
 // this route group handles pdf generation routes
 Route::prefix("pdf")->group(function (){
      Route::get("transactionReceipt", [TransactionReceiptController::class, "generateTransactionReceipt"])->name("transactionReceipt");
+});
+
+
+
+Route::get('clear', function() {
+    Artisan::call('optimize');
+    return "Caches optimized";
 });
 
 
