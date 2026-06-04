@@ -118,7 +118,7 @@ class TransferForm extends Component
             "message" => number_format($amount, 2) . " debited from your account.",
             "read_status" => false,
         ]); 
-        
+         
         // Notify Receiver (Credit)
         $receiver->notifications()->create([
             "title" => "Credit Alert",

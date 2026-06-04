@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('last_seen')->nullable();
             $table->string('profile_picture')->nullable();
+            $table->string('profile_picture_id')->nullable();
             // $table->foreignId('bank_id')->constrained('banks')->onDelete('cascade');
             $table->decimal('balance', 15, 2)->default(0.00)->nullable();
             $table->enum('status', ['Pending', 'Active', 'Suspended'])->default('Active');

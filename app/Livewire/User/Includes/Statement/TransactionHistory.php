@@ -16,7 +16,7 @@ class TransactionHistory extends Component
   public $transactionId; // This property will hold the ID of the transaction for which the receipt is being downloaded
   public $limit = 2; // items per load
   
-
+ 
 
    // This method will be called when the user clicks the download button for a transaction receipt
    public function downloadTransactionReceipt($transactionId)

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\pdf;
 
-use App\Models\Transaction;
-use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
+use App\Models\Transaction;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TransactionReceiptController extends Controller
 {
@@ -46,11 +47,10 @@ class TransactionReceiptController extends Controller
                 ];
 
                 $pdf = Pdf::loadView('pdf.transactionReceipt', $data)->setPaper('A5', 'portrait');;
-                $pdf->download('transaction_receipt.pdf');
+                $pdfDocument = $pdf->download('transaction_receipt.pdf');
 
                 // Save the PDF to storage 
                 $filePath = storage_path('app/public/receipts/' . $transaction->id . '.pdf');
-                return   $pdf->save($filePath);
-
+                 return   $pdf->save($filePath);
         }
 }
